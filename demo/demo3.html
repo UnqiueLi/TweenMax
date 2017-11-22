@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <!-- <link href='//fonts.googleapis.com/css?family=Signika+Negative:300,400' rel='stylesheet' type='text/css'> -->
+    <script src="https://cdn.bootcss.com/gsap/latest/TweenMax.min.js"></script>
+    <style>
+       div{
+           width: 50px;
+           height: 50px;
+           border-radius: 10px;
+           margin: 10px;
+       }
+       .green{
+           background: green;
+       }
+       .orange{
+           background: orange;
+       }
+       .grey{
+           background: grey;
+       }
+    </style>
+</head>
+<body>
+        <div class="wrapper">
+            <div class="box green"></div>
+            <div class="box orange"></div>
+            <div class="box grey"></div>
+        </div>
+       
+</body>
+<script>
+    console.log("aaa");
+    var tl = new TimelineLite();
+   var tween = TweenMax.to(".box", 1, {
+        x: 100
+        // x: function (index, target) {
+        //     console.log(index, target);
+        //     return (index + 1) * 100 // 100, 200, 300
+        // },
+        // left:500
+        // width:500
+    })
+    tl.add(tween, 0.5); //insert the tween at 0.5 seconds into the timeline
+    console.log(tween.endTime()); //1.5
+    tween.timeScale(2); //double the speed of the tween, thus it'll finish in half the normal time
+    console.log(tween.endTime()); //1
+    </script>
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://cdn.bootcss.com/gsap/latest/TweenMax.min.js"></script>
+</head>
+<style>
+    .box{
+        width: 100px;
+        height: 100px;
+        background: red;
+        margin: 10px;
+        float: left;
+        border-radius: 10%;
+        transform: scale(1);
+        /* position: absolute;
+        left: 0; */
+    }
+    .box1{
+        width: 100px;
+        height: 100px;
+        background: greenyellow;
+    }
+</style>
+<body>
+        <div class="box1"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+</body>
+<script>
+
+
+        TweenMax.from('.box1',.5,{
+            opactiy:0,
+            scale:0,
+            ease:Bounce.easeOut,
+            x:200,
+            delay:.5
+        })
+
+        TweenMax.staggerFrom('.box',.5,{
+            opactiy:0,
+            rotation:360,
+            // scale:2,
+            y:200,
+            delay:.5
+        },0.2)
+
+        TweenMax.to('.box1, .box',.5,{
+        // left: 500, 
+        // backgroundColor: '#f40',
+        // padding:20,
+        // borderColor:'#cdc',
+        // borderRadius:'50%'
+
+        // x:600,
+        // rotation:360,
+        // scale:.5
+
+        // x: 600,
+        // ease: Elastic.easeOut
+
+            opactiy: 0,
+            delay: 2,
+            onComplete:complete
+        })
+
+        function complete(){
+            alert("all done")
+        }
+</script>
+</html>
